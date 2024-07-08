@@ -22,3 +22,28 @@ let txt1 = `Hola`;
 let txt2 = `Mundo`;
 console.log(txt1 + " " + txt2);
 console.log(`${txt1} ${txt2}`)
+
+// conversión de texto a número
+let num1 = '10';
+let num2 = '20';
+console.log(num1 + num2);
+
+// conversión de número a texto
+console.log(parseInt(num1) + parseInt(num2));
+let num3 = 30;
+let num4 = 40;
+console.log(num3.toString() + num4.toString());
+
+// clase Math
+// valor absoluto
+let num5 = -10
+let valorAbsoluto = Math.abs(num5)
+console.log(valorAbsoluto)
+// redondeo
+let num6 = 2.5
+let redondeo = Math.round(num6)
+console.log(redondeo)
+// truncado
+let num7 = 2.7
+let truncado = Math.trunc(num7)
+console.log(truncado)
