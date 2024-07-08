@@ -27,6 +27,10 @@ class Persona{
     static difolt(){
         return `prueba método static`;
     }
+
+    static saludar(persona){
+        return `Hola ` + persona.nombre;
+    }
 }
 
 class Empleado extends Persona{
@@ -60,5 +64,12 @@ console.log(empleado1);
 empleado2 = new Empleado(`Mario`, `Jimenez`, `VMT`);
 console.log(empleado2);
 
+// no se puede llamar a un metodo static desde un objeto
+// console.log(persona1.difolt());  
+// sí se puede llamar desde la clase padre y su hija
 console.log(Persona.difolt());
 console.log(Empleado.difolt());
+
+// se pueden enviar objetos al método para que los lea
+console.log(Persona.saludar(persona1));
+
