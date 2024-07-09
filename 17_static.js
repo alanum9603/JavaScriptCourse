@@ -73,3 +73,4 @@ console.log(Empleado.difolt());
 // se pueden enviar objetos al método para que los lea
 console.log(Persona.saludar(persona1));
 
+
