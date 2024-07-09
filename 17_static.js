@@ -1,7 +1,13 @@
 class Persona{
+    // variable static
+    //esta variable solo se almacena en la clase, no en el objeto
+    static contadorPersonaObjeto = 0;
+
     constructor(nombre,apellido){
         this._nombre = nombre;
         this._apellido = apellido;
+        // incrementar la variable estatica
+        this._idPersona = Persona.contadorPersonaObjeto++;
     }
 
     get nombre(){
@@ -72,5 +78,10 @@ console.log(Empleado.difolt());
 
 // se pueden enviar objetos al método para que los lea
 console.log(Persona.saludar(persona1));
+
+// revisamos el valor de la variable estática
+console.log(`contador: ` + Persona.contadorPersonaObjeto)
+// el contador aumenta su valor por la creación de nuevos objetos de Persona
+// y tambien por la creación de objetos con sus clases hijas
 
 
