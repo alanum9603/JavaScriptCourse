@@ -1,7 +1,7 @@
 let persona1 = {
     nombre: `Juan`,
     apellido: `Perez`,
-    nombreCompleto: function(tel){
+    nombreCompleto: function (tel) {
         return this.nombre + ` ` + this.apellido + `\n Contacto: ` + tel;
     }
 }
