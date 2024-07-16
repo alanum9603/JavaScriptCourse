@@ -1,0 +1,32 @@
+// En este tipo de funciones se puede pasar como parámetros otras funciones 
+const suma = (a, b) => a + b
+
+let funcionSuma = function (a, b, funcionCallBack) {
+    let res = funcionCallBack(a, b)
+    return res
+}
+
+console.log(funcionSuma(5, 3, suma))
+
+// Llamadas asíncronas con setTimeout
+const saludo = () => console.log(`Hola mundo`)
+
+setTimeout(saludo, 3000)
+
+// También se pueden digitar funciones dentro de esta función
+// Estas funciones no se ejecutan secuencialmente, sino que 
+// todas las funciones cuentan el tiempo de ejecución desde que
+// se inicia en la terminal
+setTimeout(() => console.log('Paso 2'), 6000)
+setTimeout(() => console.log(`Paso 3`), 8000)
+setTimeout(() => console.log(`Paso 1`), 4000)
+// Primero se imprimirá el Paso 1
+
+// Funcion setInterval
+// Esta función nos permite ejecutar de forma iterativa
+// una función cada cierto tiempo
+const reloj = () => {
+    let fecha = new Date()
+    console.log(`${fecha.getHours()}: ${fecha.getMinutes()}:${fecha.getSeconds()} `)
+}
+setInterval(reloj, 5000)
