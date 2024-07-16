@@ -1,7 +1,7 @@
 class Persona {
     static contadorPersonas = 0
     constructor(nombre = String, apellido = String, edad = Number) {
-        this._idPersona = contadorPersonas++
+        this._idPersona = Persona.contadorPersonas++
         this._nombre = nombre
         this._apellido = apellido
         this._edad = edad
@@ -65,7 +65,7 @@ class Empleado extends Persona {
 }
 
 class Cliente extends Persona {
-    constructor(nombre = String, apellido = String, edad = Number, fechaRegistro = Date()) {
+    constructor(nombre = String, apellido = String, edad = Number, fechaRegistro) {
         super(nombre, apellido, edad)
         this._idCliente = super.idPersona
         this._fechaRegistro = fechaRegistro
@@ -79,8 +79,8 @@ class Cliente extends Persona {
         return this._fechaRegistro
     }
 
-    set fechaRegistro(fechaRegistro = Date()) {
-        this._fechaRegistro = this.fechaRegistro
+    set fechaRegistro(fechaRegistro) {
+        this._fechaRegistro = fechaRegistro
     }
 
     toString() {
@@ -88,3 +88,20 @@ class Cliente extends Persona {
     }
 }
 
+let persona1 = new Persona('Carlos', 'Perez', 15)
+console.log(persona1.toString())
+
+let persona2 = new Persona('Juan', 'Zapata', 15)
+console.log(persona2.toString())
+
+let empleado1 = new Empleado('Emma', 'De la Cruz', 21, 1025)
+console.log(empleado1.toString())
+
+let empleado2 = new Empleado('Chris', 'Sanchez', 21, 1250)
+console.log(empleado2.toString())
+
+let cliente1 = new Cliente('Fabio', 'Llanos', 23, Date(2014, 10, 21))
+console.log(cliente1.toString())
+
+let cliente2 = new Cliente('Sergio', 'Trauco', 27, Date(2011, 7, 28))
+console.log(cliente2.toString())
